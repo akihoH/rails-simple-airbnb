@@ -1,6 +1,21 @@
-<h1>All our Flats</h1>
-<ul>
-<% @flats.each do |flat| %>
-<li><%= flat.name %></li>
-<% end %>
-</ul>
+<%= link_to "Simple Airbnb", flats_path %>
+<form action="submit">
+<input type="text" class="form-control" placeholder="Search">
+<button type="button" class="btn btn-outline-success">Search</button>
+<button type="button" class="btn btn-outline-primary">Add Flat</button>
+</form>
+
+
+<div class="container">
+  <div class="cards"></div>
+    <% @flats.each do |flat| %>
+      <div class="card" style="width: 10rem;">
+        <img class="card-img-top" src="https://www.lodgify.com/blog/wp-content/uploads/2015/06/house.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
